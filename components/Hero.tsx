@@ -13,7 +13,6 @@ type Props = {
 };
 
 export default function Hero({ pageInfo }: Props) {
-  console.log(pageInfo);
   const [text, count] = useTypewriter({
     words: [
       `Hi, The Name's ${pageInfo?.name}`,
@@ -41,7 +40,7 @@ export default function Hero({ pageInfo }: Props) {
           <span className="mr-3">{text}</span>
           <Cursor cursorColor="#F7ab0a" />
         </h1>
-        <div className="pt-5">
+        <div className="pt-5 flex justify-center items-center">
           <Link href="#about">
             <button className="heroButton">About</button>
           </Link>

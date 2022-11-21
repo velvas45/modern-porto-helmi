@@ -9,7 +9,7 @@ type Props = {
 
 function ExperienceCard({ experience }: Props) {
   return (
-    <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 md:px-10 md:pt-4 md:pb-4 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden overflow-x-auto ">
+    <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[400px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] px-10 py-6 md:px-10 md:py-2 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden overflow-x-auto ">
       <motion.img
         initial={{
           y: -100,
@@ -29,7 +29,7 @@ function ExperienceCard({ experience }: Props) {
       <div className="px-0 md:px-10">
         <h4 className="text-4xl font-light">{experience?.jobTitle}</h4>
         <span className="font-bold text-2xl mt-1">{experience?.company}</span>
-        <div className="flex space-x-2 my-2">
+        <div className="grid grid-cols-8 gap-2 my-2">
           {experience?.technologies.map((tech) => (
             <img
               key={tech._id}
@@ -39,7 +39,7 @@ function ExperienceCard({ experience }: Props) {
             />
           ))}
         </div>
-        <p className="uppercase py-5 text-gray-300">
+        <p className="uppercase py-4 text-gray-300">
           {new Date(experience?.dateStarted).toDateString()} -{" "}
           {experience.isCurrentlyWorkingHere
             ? "Present"
