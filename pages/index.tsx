@@ -30,7 +30,6 @@ export default function Home({
   socials,
   projects,
 }: Props) {
-  console.log(pageInfo);
   return (
     <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
       <Head>
@@ -79,11 +78,20 @@ export default function Home({
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const pageInfo: PageInfo = await fetchPageInfo();
-  const experiences: Experience[] = await fetchExperiences();
-  const skills: Skill[] = await fetchSkills();
-  const projects: Project[] = await fetchProjects();
-  const socials: Social[] = await fetchSocials();
+  const data = await Promise.all([
+    fetchPageInfo(),
+    fetchExperiences(),
+    fetchSkills(),
+    fetchProjects(),
+    fetchSocials(),
+  ]);
+
+  const [pageInfo, experiences, skills, projects, socials] = data;
+  // const pageInfo: PageInfo = await fetchPageInfo();
+  // const experiences: Experience[] = await fetchExperiences();
+  // const skills: Skill[] = await fetchSkills();
+  // const projects: Project[] = await fetchProjects();
+  // const socials: Social[] = await fetchSocials();
 
   return {
     props: {

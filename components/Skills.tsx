@@ -22,7 +22,7 @@ const Skills = ({ skills }: Props) => {
       <h3 className="absolute top-36 uppercase tracking-[3px] text-gray-500 text-sm">
         Hover over a skill for current profienciency
       </h3>
-      <div className="grid grid-cols-4 gap-x-2 gap-y-5 h-[450px] w-[80%] overflow-y-scroll items-center justify-center mx-auto">
+      <div className="grid grid-cols-4 gap-5  h-[340px] md:h-[380px]  overflow-y-scroll items-center justify-center ">
         {skills?.slice(0, skills.length / 2).map((skill) => (
           <Skill key={skill._id} skill={skill} />
         ))}
