@@ -45,7 +45,7 @@ const Projects = ({ projects }: Props) => {
                 <h4 className="text-2xl md:text-4xl font-semibold text-center">
                   <span className="underline decoration-[#F7AB0A]/50">
                     Case Study {idx + 1} of {projects.length}
-                  </span>
+                  </span>{" "}
                   {project?.title}
                 </h4>
 
