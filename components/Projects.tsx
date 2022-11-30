@@ -60,7 +60,9 @@ const Projects = ({ projects }: Props) => {
                   ))}
                 </div>
 
-                <p className="text-[10px] md:text-[15px]">{project?.summary}</p>
+                <p className="text-[10px] md:text-[15px] text-center">
+                  {project?.summary}
+                </p>
               </div>
             </div>
           ))
