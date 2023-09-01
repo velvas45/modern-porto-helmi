@@ -23,7 +23,7 @@ export default function Hero({ pageInfo }: Props) {
     delaySpeed: 2000,
   });
   return (
-    <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
+    <div className="h-screen flex flex-col space-y-4 md:space-y-8 items-center justify-center text-center overflow-hidden">
       <BackgroundCircles />
       <Image
         className="relative rounded-full h-32 w-32 mx-auto object-cover"
@@ -32,7 +32,7 @@ export default function Hero({ pageInfo }: Props) {
         width={400}
         height={400}
       />
-      <div className="z-20">
+      <div className="z-20 max-w-[350px] md:max-w-full">
         <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[12px] md:tracking-[15px]">
           {pageInfo?.role}
         </h2>
@@ -40,7 +40,7 @@ export default function Hero({ pageInfo }: Props) {
           <span className="mr-3">{text}</span>
           <Cursor cursorColor="#F7ab0a" />
         </h1>
-        <div className="pt-5 flex justify-center items-center">
+        <div className="pt-5 flex flex-wrap justify-center items-center px-20">
           <Link href="#about">
             <button className="heroButton">About</button>
           </Link>

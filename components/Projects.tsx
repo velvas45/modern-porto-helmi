@@ -19,7 +19,7 @@ const Projects = ({ projects }: Props) => {
         Projects
       </h3>
 
-      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
+      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 mt-10 md:mt-0 scrollbar-thumb-[#F7AB0A]/80">
         {projects.length > 0 ? (
           projects.map((project, idx) => (
             <div
@@ -28,7 +28,7 @@ const Projects = ({ projects }: Props) => {
             >
               <motion.img
                 initial={{
-                  y: -300,
+                  y: -100,
                   opacity: 0,
                 }}
                 whileInView={{
@@ -39,20 +39,22 @@ const Projects = ({ projects }: Props) => {
                 viewport={{ once: true }}
                 src={urlFor(project.image).url()}
                 alt=""
-                className="h-[150px] md:h-[250px]"
+                className="h-[120px] md:h-[250px]"
               />
               <div className="space-y-4 md:space-y-10 px-0 md:px-10 max-w-6xl">
-                <h4 className="text-2xl md:text-4xl font-semibold text-center">
+                <h4 className="text-lg md:text-4xl font-semibold text-center">
                   <span className="underline decoration-[#F7AB0A]/50">
                     Case Study {idx + 1} of {projects.length}
                   </span>{" "}
-                  {project?.title}
+                  <a href={project?.linkToBuild} target="_blank">
+                    {project?.title}
+                  </a>
                 </h4>
 
                 <div className="flex items-center space-x-2 justify-center">
                   {project?.technologies.map((technology) => (
                     <img
-                      className="h-5 w-5"
+                      className="h-6 md:h-10 w-6 md:w-10"
                       key={technology._id}
                       src={urlFor(technology?.image).url()}
                       alt=""
@@ -60,7 +62,7 @@ const Projects = ({ projects }: Props) => {
                   ))}
                 </div>
 
-                <p className="text-[10px] md:text-[15px] text-center">
+                <p className="text-sm md:text-2xl text-center max-w-full md:max-w-[80%] mx-auto">
                   {project?.summary}
                 </p>
               </div>

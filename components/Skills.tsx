@@ -13,16 +13,16 @@ const Skills = ({ skills }: Props) => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className="flex relative flex-col text-center md:text-left xl:flex-row max-w-[2000px] xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto items-center"
+      className="flex relative flex-col text-center md:text-left xl:flex-row max-w-[1244px] xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto items-center"
     >
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
         Skills
       </h3>
 
-      <h3 className="absolute top-36 uppercase tracking-[3px] text-gray-500 text-sm">
+      <h3 className="absolute top-36 uppercase tracking-[3px] text-gray-500 text-sm px-4 md:px-0">
         Hover over a skill for current profienciency
       </h3>
-      <div className="grid grid-cols-4 gap-5  h-[340px] md:h-[380px]  overflow-y-scroll items-center justify-center ">
+      <div className="grid grid-cols-3 lg:grid-cols-5 gap-5 h-[320px] md:h-[350px] mt-16 md:mt-0 overflow-auto items-center justify-center">
         {skills?.slice(0, skills.length / 2).map((skill) => (
           <Skill key={skill._id} skill={skill} />
         ))}

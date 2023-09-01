@@ -23,7 +23,7 @@ function About({ pageInfo }: Props) {
       </h3>
 
       <motion.div
-        className="flex-shrink-0 mt-8"
+        className="flex-shrink-0 mt-24"
         initial={{
           x: -200,
           opacity: 0,
@@ -38,7 +38,7 @@ function About({ pageInfo }: Props) {
         }}
       >
         <Image
-          className="-mb-20 md:mb-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px]"
+          className="-mb-20 md:mb-0 w-48 h-48 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px]"
           src={urlFor(pageInfo?.profilePic).url()}
           width={500}
           height={600}
@@ -46,13 +46,15 @@ function About({ pageInfo }: Props) {
         />
       </motion.div>
 
-      <div className="space-y-10 px-0 md:px-10">
-        <h4 className="text-4xl font-semibold">
+      <div className="space-y-10 px-0 md:px-10 mt-12 md:mt-0">
+        <h4 className="text-xl md:text-4xl font-semibold mb-4">
           Here is a{" "}
           <span className="underline decoration-[#F7AB0A]/50">little</span>{" "}
           background
         </h4>
-        <span className="text-base">{pageInfo?.backgroundInformation}</span>
+        <span className="text-md md:text-base text-justify">
+          {pageInfo?.backgroundInformation}
+        </span>
       </div>
     </motion.div>
   );
